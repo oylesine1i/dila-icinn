@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dila ❤️</title>
+<title>Dila 🪷🧸💙</title>
 
 <style>
 * {
@@ -14,7 +14,7 @@ body {
     margin: 0;
     min-height: 100vh;
     font-family: Arial, sans-serif;
-    background: linear-gradient(160deg, #120014, #35001f, #120014);
+    background: linear-gradient(160deg, #021526, #03346E, #6EACDA);
     color: white;
     display: flex;
     justify-content: center;
@@ -32,78 +32,118 @@ body {
     justify-content: center;
     text-align: center;
     position: relative;
+    z-index: 2;
 }
 
-.heart {
-    font-size: 60px;
-    animation: beat 1.4s infinite;
+.top-icons {
+    font-size: 45px;
+    margin-bottom: 10px;
+    animation: floatHead 3s ease-in-out infinite alternate;
 }
 
-@keyframes beat {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.18); }
+@keyframes floatHead {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
 }
 
 h1 {
-    font-size: 34px;
-    margin: 12px 0;
+    font-size: 32px;
+    margin: 10px 0 5px;
+    color: #E2F1E7;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
 }
 
 .subtitle {
-    color: #ffb6d9;
-    font-size: 17px;
+    color: #D4EBF8;
+    font-size: 16px;
     margin-bottom: 25px;
 }
 
-.message {
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 22px;
+.card {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 25px;
     padding: 25px 20px;
     line-height: 1.7;
     font-size: 16px;
-    backdrop-filter: blur(10px);
-    text-align: left;
+    backdrop-filter: blur(12px);
+    text-align: center;
+    min-height: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.nav-btn {
+    border: none;
+    border-radius: 30px;
+    padding: 14px 28px;
+    margin-top: 22px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    background: #6EACDA;
+    color: #021526;
+    box-shadow: 0 0 20px rgba(110, 172, 218, 0.5);
+    transition: 0.3s;
+    align-self: center;
+}
+
+.nav-btn:hover {
+    transform: scale(1.07);
+    background: #E2F1E7;
 }
 
 .question {
-    margin-top: 30px;
+    display: none;
+    margin-top: 20px;
     text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
 .question h2 {
     font-size: 24px;
+    color: #E2F1E7;
 }
 
-button {
+.choice-btn {
     border: none;
     border-radius: 30px;
     padding: 14px 25px;
-    margin: 6px;
+    margin: 8px;
     font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
 }
 
 .yes {
-    background: #ff3d81;
-    color: white;
-    box-shadow: 0 0 20px rgba(255,61,129,.4);
+    background: #6EACDA;
+    color: #021526;
+    box-shadow: 0 0 20px rgba(110, 172, 218, 0.6);
 }
 
 .no {
-    background: white;
-    color: #ff3d81;
+    background: #E2F1E7;
+    color: #021526;
 }
 
-button:hover {
-    transform: scale(1.07);
+.choice-btn:hover {
+    transform: scale(1.08);
 }
 
 #answer {
-    margin-top: 18px;
-    font-size: 18px;
-    color: #ffb6d9;
+    margin-top: 20px;
+    font-size: 19px;
+    color: #E2F1E7;
+    font-weight: bold;
 }
 
 .music {
@@ -111,25 +151,33 @@ button:hover {
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(255,255,255,.12);
+    background: rgba(255, 255, 255, 0.15);
     color: white;
-    border: 1px solid rgba(255,255,255,.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    padding: 10px 22px;
+    font-size: 14px;
+    cursor: pointer;
+    z-index: 10;
+    backdrop-filter: blur(5px);
 }
 
-.floating-heart {
+/* Yuzen Figurler */
+.bg-element {
     position: fixed;
-    bottom: -30px;
-    animation: floatUp 5s linear forwards;
+    bottom: -50px;
+    animation: floatUp 6s linear forwards;
     pointer-events: none;
+    z-index: 1;
 }
 
 @keyframes floatUp {
     from {
-        transform: translateY(0);
-        opacity: 1;
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.9;
     }
     to {
-        transform: translateY(-110vh);
+        transform: translateY(-115vh) rotate(360deg);
         opacity: 0;
     }
 }
@@ -140,67 +188,29 @@ button:hover {
 
 <div class="container">
 
-    <div class="heart">❤️</div>
+    <div class="top-icons">🧸 🪷 💙</div>
 
-    <h1>Dila ❤️</h1>
+    <h1>Dila 🪷</h1>
 
     <div class="subtitle">
-        Sana söylemek istediğim birkaç şey var...
+        Sana soylemek istedigim birkac sey var... ✨
     </div>
 
-    <div class="message">
-
-        Belki sana bunu her zaman anlatamıyorum ama benim için
-        senin yerin gerçekten çok başka.
-
-        <br><br>
-
-        Seninle yaşadığım her şey, benim için ayrı bir anlam taşıyor.
-        Birlikte geçirdiğimiz en küçük anın bile bende bir izi var.
-        Seninle daha yaşamak istediğim o kadar çok şey, görmek istediğim
-        o kadar çok an var ki...
-
-        <br><br>
-
-        Ben geleceğimi düşündüğümde, o geleceğin içinde seni görüyorum.
-
-        <br><br>
-
-        Birlikte güldüğümüz günleri, beraber kurduğumuz hayalleri,
-        yıllar sonra bile birbirimize bakıp
-        “iyi ki” diyeceğimiz anları düşünüyorum.
-
-        <br><br>
-
-        Benim için bazı şeylerin ilki, bazı hayallerin başlangıcı,
-        bazı duyguların en güzeli sensin.
-
-        <br><br>
-
-        Ve açıkçası, hayatımda bundan sonrasını düşünürken
-        yanımda başka birini değil, <b>seni görmek istiyorum.</b>
-
-        <br><br>
-
-        Sadece bugünümü değil, yarınlarımı da seninle paylaşmak istiyorum.
-
-        <br><br>
-
-        <b>İyi ki varsın Dila.<br>
-        İyi ki hayatımdasın.<br>
-        Ve umarım geleceğimde de hep sen olursun. ❤️</b>
-
+    <div id="card" class="card">
+        <!-- Paragraflar JS ile yuklenecek -->
     </div>
 
-    <div class="question">
-        <h2>Beni affeder misin? 🥺</h2>
+    <button id="nextBtn" class="nav-btn" onclick="nextPage()">Devam Et ➔</button>
 
-        <button class="yes" onclick="yesAnswer()">
-            Evet ❤️
+    <div id="questionArea" class="question">
+        <h2>Beni affeder misin? 🥺🪷</h2>
+
+        <button class="choice-btn yes" onclick="yesAnswer()">
+            Evet 🧸💙
         </button>
 
-        <button class="no" onclick="noAnswer()">
-            Hayır 😔
+        <button class="choice-btn no" onclick="noAnswer()">
+            Hayir 😔
         </button>
 
         <div id="answer"></div>
@@ -211,14 +221,56 @@ button:hover {
     </audio>
 
     <button class="music" onclick="toggleMusic()">
-        🎵 Müziği Aç / Kapat
+        🎵 Muzigi Ac / Kapat
     </button>
 
 </div>
 
 <script>
 
+const pages = [
+    "Belki sana bunu her zaman anlatamiyorum ama benim icin senin yerin gercekten cok baska. 🧸",
+    "Seninle yasadigim her sey, benim icin ayri bir anlam tasiyor. Birlikte gecirdigimiz en kucuk anin bile bende bir izi var. 🪷",
+    "Seninle daha yasamak istedigim o kadar cok sey, gormek istedigim o kadar cok an var ki... ✨",
+    "Ben gelecegimi dusundugumde, o gelecegin icinde seni goruyorum. 💙",
+    "Birlikte guldugumuz gunleri, beraber kurdugumuz hayalleri, yillar sonra bile birbirimize bakip 'iyi ki' diyecegimiz anlari dusunuyorum. 🧸🪷",
+    "Benim icin bazi seylerin ilki, bazi hayallerin baslangici, bazi duygularin en guzeli sensin. ✨",
+    "Ve acikcasi, hayatimda bundan sonrasini dusunurken yanimda baska birini degil, <b>seni gormek istiyorum.</b> 💙",
+    "Sadece bugunumu degil, yarinlarimi da seninle paylasmak istiyorum. 🪷",
+    "<b>Iyi ki varsin Dila.<br>Iyi ki hayatimdasin.<br>Ve umarim gelecegimde de hep sen olursun. 🧸🪷💙</b>"
+];
+
+let currentPage = 0;
+const card = document.getElementById("card");
+const nextBtn = document.getElementById("nextBtn");
+const questionArea = document.getElementById("questionArea");
 const music = document.getElementById("music");
+
+function renderPage() {
+    card.style.animation = 'none';
+    card.offsetHeight; // animation reset
+    card.style.animation = 'fadeIn 0.5s ease-in-out';
+    card.innerHTML = pages[currentPage];
+}
+
+function nextPage() {
+    // Ilk tiklamada muzigi otomatik baslat
+    if (music.paused) {
+        music.play().catch(() => {});
+    }
+
+    // Her sayfa gecisinde ortama tatli bir obje firlat
+    createBgElement();
+
+    if (currentPage < pages.length - 1) {
+        currentPage++;
+        renderPage();
+    } else {
+        card.style.display = "none";
+        nextBtn.style.display = "none";
+        questionArea.style.display = "block";
+    }
+}
 
 function toggleMusic() {
     if (music.paused) {
@@ -230,34 +282,42 @@ function toggleMusic() {
 
 function yesAnswer() {
     document.getElementById("answer").innerHTML =
-        "Seni çok seviyorum Dila. ❤️";
+        "Seni cok seviyorum Dila! 🧸🪷💙✨";
 
-    for (let i = 0; i < 25; i++) {
-        createHeart();
+    // "Evet" denildiginde ekranı ayicik, lotus ve kalplerle doldur
+    for (let i = 0; i < 35; i++) {
+        setTimeout(createBgElement, i * 120);
     }
 }
 
 function noAnswer() {
     document.getElementById("answer").innerHTML =
-        "Yine de seni çok seviyorum... 🥺❤️";
+        "Yine de seni cok seviyorum... 🥺🧸💙";
 }
 
-function createHeart() {
-    const heart = document.createElement("div");
+function createBgElement() {
+    const items = ["🧸", "🪷", "💙", "✨", "🌸"];
+    const elem = document.createElement("div");
 
-    heart.className = "floating-heart";
-    heart.innerHTML = "❤️";
+    elem.className = "bg-element";
+    elem.innerHTML = items[Math.floor(Math.random() * items.length)];
 
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.fontSize = (15 + Math.random() * 25) + "px";
-    heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+    elem.style.left = Math.random() * 90 + "vw";
+    elem.style.fontSize = (20 + Math.random() * 25) + "px";
+    elem.style.animationDuration = (4 + Math.random() * 3) + "s";
 
-    document.body.appendChild(heart);
+    document.body.appendChild(elem);
 
     setTimeout(() => {
-        heart.remove();
-    }, 6000);
+        elem.remove();
+    }, 7000);
 }
+
+// Otomatik arka plan efektleri
+setInterval(createBgElement, 2500);
+
+// Ilk sayfayi yukle
+renderPage();
 
 </script>
 
